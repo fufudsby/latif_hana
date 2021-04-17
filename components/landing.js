@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.primary.main,
   },
   name: {
-    fontSize: 150,
+    fontSize: 130,
     color: theme.palette.warning.light,
     lineHeight: 0.8,
     width: '90%',
@@ -57,7 +57,9 @@ const useStyles = makeStyles((theme) => ({
     letterSpacing: 2,
   },
   button: {
+    fontSize: 14,
     marginTop: theme.spacing(5),
+    padding: theme.spacing(1.3, 1),
     borderRadius: 0,
     maxWidth: 250,
     letterSpacing: 2,
