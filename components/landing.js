@@ -15,18 +15,17 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 250,
     margin: theme.spacing(0, 'auto'),
     position: 'relative',
-    display: 'flex',
-    alignItems: 'end',
     '& span': {
       fontSize: 15,
       fontFamily: '\'Source Sans Pro\', sans-serif',
       transform: 'translateY(-30px)',
       letterSpacing: 4,
+      paddingLeft: theme.spacing(2),
     },
   },
   date: {
     display: 'flex',
-    fontSize: 20,
+    fontSize: 18,
     color: theme.palette.warning.light,
     letterSpacing: 2,
     margin: theme.spacing(1, 0),
@@ -51,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   toGuest: {
-    fontSize: 18,
+    fontSize: 16,
     color: theme.palette.warning.light,
     fontStyle: 'italic',
     letterSpacing: 2,
@@ -85,7 +84,6 @@ const Landing = () => {
         <Typography
           className="custom-font"
           classes={{root: classes.name}}
-          style={{justifyContent: 'space-between'}}
         >
           Latif
           <span>AND</span>
@@ -93,7 +91,7 @@ const Landing = () => {
         <Typography
           className="custom-font"
           classes={{root: classes.name}}
-          style={{justifyContent: 'end'}}
+          style={{textAlign: 'right'}}
         >
           Hana
         </Typography>
