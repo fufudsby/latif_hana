@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.warning.light,
     lineHeight: 0.8,
     width: '90%',
-    maxWidth: 250,
+    maxWidth: 260,
     margin: theme.spacing(0, 'auto'),
     position: 'relative',
     '& span': {
@@ -81,7 +81,7 @@ const Landing = () => {
       flexDirection="column"
       className={classes.container}
     >
-      <Box width={1}>
+      <Box width={1} marginBottom={1}>
         <Typography
           className="custom-font"
           classes={{root: classes.name}}
