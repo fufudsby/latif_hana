@@ -58,10 +58,11 @@ const useStyles = makeStyles((theme) => ({
   button: {
     fontSize: 14,
     marginTop: theme.spacing(5),
-    padding: theme.spacing(1.3, 1),
     borderRadius: 0,
     maxWidth: 250,
     letterSpacing: 2,
+    color: theme.palette.warning.light,
+    border: `1px solid ${theme.palette.warning.light}`,
     '&:hover': {
       backgroundColor: 'transparent',
     },
