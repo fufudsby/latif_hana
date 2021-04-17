@@ -1,0 +1,23 @@
+/* Require */
+
+body {
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: 'Kissita Script';
+  src: url('../fonts/kissita_script-webfont.eot');
+  src: url('../fonts/kissita_script-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/kissita_script-webfont.woff2') format('woff2'),
+       url('../fonts/kissita_script-webfont.woff') format('woff'),
+       url('../fonts/kissita_script-webfont.ttf')  format('truetype'),
+       url('../fonts/kissita_script-webfont.svg') format('svg');
+}
+
+.custom-font {
+  font-family: 'Kissita Script', 'Source Sans Pro', sans-serif !important;
+}

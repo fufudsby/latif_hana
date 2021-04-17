@@ -1,7 +1,42 @@
-import '../styles/globals.css'
+import Head from 'next/head';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import 'styles/stylesheet.css';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+function App({ Component, pageProps }) {
+  const defaultTheme = createMuiTheme({
+    typography: {
+      fontFamily: '\'Source Sans Pro\', sans-serif',
+      fontSize: 16,
+    },
+    palette: {
+      background: {
+        default: '#f1f3f4',
+      },
+      primary: {
+        light: '#4488bf',
+        main: '#1e3647',
+      },
+      warning: {
+        light: '#f4f2c9',
+        main: '#e3ba3f',
+      },
+      secondary: {
+        main: '#fbe6dd',
+      },
+    },
+  });
+  return (
+    <MuiThemeProvider theme={defaultTheme}>
+      <Head>
+        <link rel="shortcut icon" href="/favicon/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet" />
+      </Head>
+      <CssBaseline />
+      <Component {...pageProps} />
+    </MuiThemeProvider>
+  );
+};
 
-export default MyApp
+export default App;
