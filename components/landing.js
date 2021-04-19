@@ -2,17 +2,18 @@ import React, { memo } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Box, Typography, Button } from '@material-ui/core';
 import { Link } from 'react-scroll';
+import { useRouter } from 'next/router';
 
 const useStyles = makeStyles((theme) => ({
   container: {
     backgroundColor: theme.palette.primary.main,
   },
   name: {
-    fontSize: 130,
+    fontSize: 125,
     color: theme.palette.warning.light,
     lineHeight: 0.8,
     width: '90%',
-    maxWidth: 260,
+    maxWidth: 250,
     margin: theme.spacing(0, 'auto'),
     position: 'relative',
     '& span': {
@@ -25,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
   },
   date: {
     display: 'flex',
+    justifyContent: 'center',
     fontSize: 18,
     color: theme.palette.warning.light,
     letterSpacing: 2,
@@ -54,9 +56,10 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.warning.light,
     fontStyle: 'italic',
     letterSpacing: 2,
+    textTransform: 'capitalize',
   },
   button: {
-    fontSize: 14,
+    fontSize: 12,
     marginTop: theme.spacing(5),
     borderRadius: 0,
     maxWidth: 250,
@@ -72,43 +75,48 @@ const useStyles = makeStyles((theme) => ({
 const Landing = () => {
   console.log('render Landing');
   const classes = useStyles();
+  const router = useRouter();
+  const { to } = router.query;
   return (
     <Box
       height="100vh"
       display="flex"
-      justifyContent="center"
+      justifyContent="space-around"
       alignItems="center"
       flexDirection="column"
+      paddingY={5}
       className={classes.container}
     >
-      <Box width={1} marginBottom={1}>
+      <Box width={1} textAlign="center">
+        <Box width={1} marginBottom={1}>
+          <Typography
+            className="custom-font"
+            classes={{root: classes.name}}
+          >
+            Latif
+            <span>AND</span>
+          </Typography>
+          <Typography
+            className="custom-font"
+            classes={{root: classes.name}}
+            style={{textAlign: 'right'}}
+          >
+            Hana
+          </Typography>
+        </Box>
         <Typography
-          className="custom-font"
-          classes={{root: classes.name}}
+          classes={{root: classes.date}}
         >
-          Latif
-          <span>AND</span>
+          <span>08</span>
+          <span>23</span>
+          <span>2021</span>
         </Typography>
         <Typography
-          className="custom-font"
-          classes={{root: classes.name}}
-          style={{textAlign: 'right'}}
+          classes={{root: classes.toGuest}}
         >
-          Hana
+          To {to ? to : 'Guest'}
         </Typography>
       </Box>
-      <Typography
-        classes={{root: classes.date}}
-      >
-        <span>08</span>
-        <span>23</span>
-        <span>2021</span>
-      </Typography>
-      <Typography
-        classes={{root: classes.toGuest}}
-      >
-        To Rizkia Nurjannah
-      </Typography>
       <Button
         variant="outlined"
         color="secondary"
