@@ -21,9 +21,12 @@ const useStyles = makeStyles((theme) => ({
   },
   audioControl: {
     left: '50%',
-    transform: `translateX(${widthWindow / 2}px)`,
+    maxWidth: widthWindow,
+    width: '100%',
+    transform: `translateX(-50%)`,
+    pointerEvents: 'none',
     '& .MuiIconButton-root': {
-      transform: 'translateX(-100%)',
+      pointerEvents: 'visible',
     },
   },
 }));

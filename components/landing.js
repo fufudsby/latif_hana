@@ -87,7 +87,7 @@ const Landing = () => {
       paddingY={5}
       className={classes.container}
     >
-      <Box width={1} textAlign="center">
+      <Box width={1} display="flex" flexDirection="column" alignItems="center">
         <Box width={1} marginBottom={1}>
           <Typography
             className="custom-font"
