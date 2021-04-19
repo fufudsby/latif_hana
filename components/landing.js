@@ -6,11 +6,11 @@ import { useRouter } from 'next/router';
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: theme.palette.background.paper,
   },
   name: {
     fontSize: 125,
-    color: theme.palette.warning.light,
+    color: theme.palette.primary.main,
     lineHeight: 0.8,
     width: '90%',
     maxWidth: 250,
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     fontSize: 18,
-    color: theme.palette.warning.light,
+    color: theme.palette.primary.main,
     letterSpacing: 2,
     margin: theme.spacing(1, 0),
     '& span': {
@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
         position: 'absolute',
         width: 5,
         height: 5,
-        backgroundColor: theme.palette.warning.light,
+        backgroundColor: theme.palette.primary.main,
         left: 0,
         top: '50%',
         transform: 'translate(-50%, -50%)',
@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
   },
   toGuest: {
     fontSize: 16,
-    color: theme.palette.warning.light,
+    color: theme.palette.primary.main,
     fontStyle: 'italic',
     letterSpacing: 2,
     textTransform: 'capitalize',
@@ -64,8 +64,8 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 0,
     maxWidth: 250,
     letterSpacing: 2,
-    color: theme.palette.warning.light,
-    border: `1px solid ${theme.palette.warning.light}`,
+    color: theme.palette.primary.main,
+    border: `1px solid ${theme.palette.primary.main}`,
     '&:hover': {
       backgroundColor: 'transparent',
     },
@@ -92,6 +92,7 @@ const Landing = () => {
           <Typography
             className="custom-font"
             classes={{root: classes.name}}
+            style={{textAlign: 'left'}}
           >
             Latif
             <span>AND</span>
@@ -119,7 +120,7 @@ const Landing = () => {
       </Box>
       <Button
         variant="outlined"
-        color="secondary"
+        color="primary"
         disableElevation
         fullWidth
         classes={{root: classes.button}}
