@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
 import { makeStyles } from '@material-ui/core/styles';
-import { Container, Box, IconButton } from '@material-ui/core';
-import ReactAudioPlayer from 'react-audio-player';
+import { Container, Box, IconButton, CircularProgress } from '@material-ui/core';
+import { useAudioPlayer } from 'react-use-audio-player';
 import VolumeUpRoundedIcon from '@material-ui/icons/VolumeUpRounded';
 import VolumeOffRoundedIcon from '@material-ui/icons/VolumeOffRounded';
 import Landing from 'components/landing';
@@ -27,15 +27,40 @@ const useStyles = makeStyles((theme) => ({
     pointerEvents: 'none',
     '& .MuiIconButton-root': {
       pointerEvents: 'visible',
+      padding: theme.spacing(1),
+      margin: theme.spacing(1),
+      '& svg.MuiSvgIcon-root': {
+        fontSize: 22,
+      },  
     },
   },
 }));
 
 export default function Home() {
   const classes = useStyles();
-  const [ muted, setMuted ] = useState(false);
-  const handleMuted = () => {
-    setMuted(!muted);
+  const AudioPlayer = () => {
+    const { togglePlayPause, ready, loading, playing } = useAudioPlayer({
+        src: '/audio/sabda_alam.mp3',
+        format: 'mp3',
+        autoplay: true,
+    });
+    if (!ready && !loading) return null;
+    if (loading) {
+      return (
+        <IconButton color="primary">
+          <CircularProgress size={20} thickness={4.5} />
+        </IconButton>
+      );
+    }
+    return (
+      <IconButton color="primary" onClick={togglePlayPause}>
+        {playing ? (
+          <VolumeOffRoundedIcon size="small" />
+        ) : (
+          <VolumeUpRoundedIcon size="small" />
+        )}
+      </IconButton>
+    );
   };
   return (
     <Container classes={{root: classes.container}}>
@@ -44,12 +69,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <ReactAudioPlayer
-        src="/audio/sabda_alam.ogg"
-        autoPlay
-        loop={true}
-        muted={muted}
-      />
       <Box
         className={classes.boxContainer}
         overflow="hidden"
@@ -59,21 +78,18 @@ export default function Home() {
         <Box className="sectionOne">
           <SectionOne />
         </Box>
+        <Box className="sectionTwo">
+          <SectionTwo />
+        </Box>
       </Box>
       <Box
         position="fixed"
         bottom={0}
         className={classes.audioControl}
         display="flex"
-        justifyContent="end"
+        justifyContent="flex-end"
       >
-        <IconButton color="primary" onClick={handleMuted}>
-          {muted ? (
-            <VolumeUpRoundedIcon size="small" />
-          ) : (
-            <VolumeOffRoundedIcon size="small" />
-          )}
-        </IconButton>
+        <AudioPlayer />
       </Box>
     </Container>
   )
