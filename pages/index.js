@@ -8,6 +8,10 @@ import VolumeOffRoundedIcon from '@material-ui/icons/VolumeOffRounded';
 import Landing from 'components/landing';
 import SectionOne from 'components/sectionOne';
 import SectionTwo from 'components/sectionTwo';
+import SectionThree from 'components/sectionThree';
+import { initializeApollo } from 'lib/apolloClient';
+import { GET_MESSAGES } from 'graphql/message';
+import { useRouter } from 'next/router';
 
 const widthWindow = 500;
 const useStyles = makeStyles((theme) => ({
@@ -18,6 +22,9 @@ const useStyles = makeStyles((theme) => ({
   boxContainer: {
     boxShadow: '0 0 48px 0 rgba(0,0,0,.2)',
     background: theme.palette.background.paper,
+    '& .sectionTwo': {
+      paddingBottom: theme.spacing(6),
+    },
   },
   audioControl: {
     left: '50%',
@@ -36,8 +43,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Home() {
+export default function Home({ messages }) {
+  console.log('messages', messages);
   const classes = useStyles();
+  const router = useRouter();
+  const { to, shift } = router.query;
   const AudioPlayer = () => {
     const { togglePlayPause, ready, loading, playing } = useAudioPlayer({
         src: '/audio/sabda_alam.mp3',
@@ -74,12 +84,15 @@ export default function Home() {
         overflow="hidden"
         minHeight="100vh"
       >
-        <Landing />
+        <Landing to={to} />
         <Box className="sectionOne">
           <SectionOne />
         </Box>
         <Box className="sectionTwo">
           <SectionTwo />
+        </Box>
+        <Box className="sectionThree">
+          <SectionThree shift={shift} />
         </Box>
       </Box>
       <Box
@@ -92,5 +105,22 @@ export default function Home() {
         <AudioPlayer />
       </Box>
     </Container>
-  )
-}
+  );
+};
+
+export async function getServerSideProps() {
+  const apolloClient = initializeApollo();
+  var messages = [];
+  
+  await apolloClient.query({
+    query: GET_MESSAGES,
+  }).then((v) => {
+    messages = v.data.getMessages;
+  }).catch(err => {
+    console.log('Error', err);
+  });
+
+  return {
+    props: { messages },
+  };
+};

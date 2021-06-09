@@ -2,7 +2,6 @@ import React, { memo } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Box, Typography, Button } from '@material-ui/core';
 import { Link } from 'react-scroll';
-import { useRouter } from 'next/router';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -64,19 +63,23 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 0,
     maxWidth: 250,
     letterSpacing: 2,
+    padding: 0,
     color: theme.palette.primary.main,
     border: `1px solid ${theme.palette.primary.main}`,
     '&:hover': {
       backgroundColor: 'transparent',
     },
+    '& a': {
+      display: 'block',
+      width: '100%',
+      padding: theme.spacing(0.6, 2),
+    }
   },
 }));
 
-const Landing = () => {
+const Landing = ({ to }) => {
   console.log('render Landing');
   const classes = useStyles();
-  const router = useRouter();
-  const { to } = router.query;
   return (
     <Box
       height="100vh"

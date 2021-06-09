@@ -8,8 +8,8 @@ import { Carousel } from 'react-responsive-carousel';
 const useStyles = makeStyles((theme) => ({
   boxContent: {
     background: theme.palette.background.paper,
-    transform: 'translateY(-80px)',
-    padding: theme.spacing(5, 2),
+    transform: 'translateY(-50px)',
+    padding: theme.spacing(4, 0),
   },
   boxTitle: {
     margin: theme.spacing(0, 4),
@@ -25,16 +25,16 @@ const useStyles = makeStyles((theme) => ({
       lineHeight: 1.3,
       margin: theme.spacing(1, 0),
     },
-    '&:before': {
-      content: `''`,
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      width: 2,
-      height: 50,
-      background: theme.palette.primary.main,
-      transform: 'translateX(-20px)',
-    },
+    // '&:before': {
+    //   content: `''`,
+    //   position: 'absolute',
+    //   top: 0,
+    //   left: 0,
+    //   width: 2,
+    //   height: 50,
+    //   background: theme.palette.primary.main,
+    //   transform: 'translateX(-20px)',
+    // },
   },
   carousel: {
     '& .carousel': {
@@ -69,7 +69,7 @@ const SectionOne = () => {
           objectFit="cover"
         />
       </Box>
-      <Box width="94%" className={classes.boxContent}>
+      <Box width="96%" className={classes.boxContent}>
         <Box position="relative" className={classes.boxTitle}>
           <Typography variant="h6">
             The Story

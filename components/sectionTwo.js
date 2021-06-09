@@ -1,31 +1,12 @@
 import React, { memo } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Box, Typography, Avatar } from '@material-ui/core';
+import Title from 'components/title';
 
 const useStyles = makeStyles((theme) => ({
-  title: {
-    textTransform: 'uppercase',
-    fontSize: '18px',
-    fontWeight: 600,
-    letterSpacing: 2,
-    textAlign: 'center',
-    padding: theme.spacing(2, 0),
-    marginBottom: theme.spacing(3),
-    position: 'relative',
-    '& span': {
-      position: 'absolute',
-      left: '50%',
-      bottom: '55%',
-      width: '36px',
-      transform: 'translate(-50%)',
-      '& img': {
-        width: '100%',
-      },
-    },
-  },
   avatar: {
-    maxWidth: theme.spacing(46),
-    maxHeight: theme.spacing(46),
+    maxWidth: theme.spacing(33),
+    maxHeight: theme.spacing(33),
     width: '85%',
     height: '85%',
   },
@@ -45,15 +26,10 @@ const SectionTwo = () => {
   const classes = useStyles();
   return (
     <Box minHeight="100vh">
-      <Typography variant="h4" classes={{root: classes.title}}>
-        Once upon a time
-        <span>
-          <img src="/images/2195597.png" />
-        </span>
-      </Typography>
+      <Title text="Once upon a time" />
       <Box display="flex" flexDirection="column" alignItems="center" paddingY={3}>
         <Avatar src="/images/img2.jpg" classes={{root: classes.avatar}} />
-        <Box marginTop={3} paddingX={2} maxWidth="370px" textAlign="center">
+        <Box marginTop={3} paddingX={2} maxWidth="420px" textAlign="center">
           <Typography variant="h4" classes={{root: classes.name}}>
             John Henry
           </Typography>
@@ -64,7 +40,7 @@ const SectionTwo = () => {
       </Box>
       <Box display="flex" flexDirection="column" alignItems="center" paddingY={3}>
         <Avatar src="/images/img3.jpg" classes={{root: classes.avatar}} />
-        <Box marginTop={3} paddingX={2} maxWidth="370px" textAlign="center">
+        <Box marginTop={3} paddingX={2} maxWidth="420px" textAlign="center">
           <Typography variant="h4" classes={{root: classes.name}}>
             Carol Colin
           </Typography>
