@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import Head from 'next/head';
 import { makeStyles } from '@material-ui/core/styles';
 import { Container, Box, IconButton, CircularProgress } from '@material-ui/core';
@@ -9,6 +9,7 @@ import Landing from 'components/landing';
 import SectionOne from 'components/sectionOne';
 import SectionTwo from 'components/sectionTwo';
 import SectionThree from 'components/sectionThree';
+import SectionRSVP from 'components/sectionRSVP';
 import { initializeApollo } from 'lib/apolloClient';
 import { GET_MESSAGES } from 'graphql/message';
 import { useRouter } from 'next/router';
@@ -43,11 +44,40 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Home({ messages }) {
-  console.log('messages', messages);
+export default function Home({ data }) {
+  console.log('messages', data);
   const classes = useStyles();
   const router = useRouter();
   const { to, shift } = router.query;
+  const [ messages, setMessages ] = useState(data);
+  const [ loading, setLoading ] = useState(false);
+  const [ values, setValues ] = useState({});
+  const [ success, setSuccess ] = useState(false);
+  console.log('values', values);
+  const handleChangeVal = useCallback((e) => {
+    setValues({...values, [e.currentTarget.id]: e.currentTarget.value });
+  }, [values]);
+  const handleSubmit = useCallback(async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    const v = await fetch(
+      '/api/message/new',
+      {
+        body: JSON.stringify(values),
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        method: 'POST'
+      }
+    );
+    const result = await v.json();
+    console.log('result', result);
+    if (result.createMessage) {
+      setValues({});
+      setSuccess(true);
+    }
+    setLoading(false);
+  }, [values]);
   const AudioPlayer = () => {
     const { togglePlayPause, ready, loading, playing } = useAudioPlayer({
         src: '/audio/sabda_alam.mp3',
@@ -94,6 +124,16 @@ export default function Home({ messages }) {
         <Box className="sectionThree">
           <SectionThree shift={shift} />
         </Box>
+        <Box className="sectionRSVP">
+          <SectionRSVP
+            messages={messages}
+            onChangeVal={handleChangeVal}
+            onSubmit={handleSubmit}
+            values={values}
+            loading={loading}
+            success={success}
+          />
+        </Box>
       </Box>
       <Box
         position="fixed"
@@ -121,6 +161,6 @@ export async function getServerSideProps() {
   });
 
   return {
-    props: { messages },
+    props: { data: messages },
   };
 };
