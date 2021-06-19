@@ -65,7 +65,6 @@ const SectionRSVP = ({
               label="Name"
               name="name"
               autoComplete="off"
-              autoFocus
               size="small"
               value={values.name ? values.name : ''}
               disabled={loading}
@@ -83,7 +82,6 @@ const SectionRSVP = ({
               label="Message"
               name="message"
               autoComplete="off"
-              autoFocus
               size="small"
               value={values.message ? values.message : ''}
               disabled={loading}
