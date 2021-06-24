@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
   boxContainer: {
     boxShadow: '0 0 48px 0 rgba(0,0,0,.2)',
-    background: theme.palette.background.paper,
+    background: theme.palette.background.default,
     '& .sectionTwo': {
       paddingBottom: theme.spacing(6),
     },
@@ -41,6 +41,12 @@ const useStyles = makeStyles((theme) => ({
       '& svg.MuiSvgIcon-root': {
         fontSize: 22,
       },  
+    },
+  },
+  colorDark: {
+    color: theme.palette.primary.dark,
+    '& .MuiCircularProgress-root' : {
+      color: theme.palette.primary.dark,
     },
   },
 }));
@@ -100,13 +106,13 @@ export default function Home({ data }) {
     if (!ready && !loading) return null;
     if (loading) {
       return (
-        <IconButton color="primary">
+        <IconButton className={classes.colorDark}>
           <CircularProgress size={20} thickness={4.5} />
         </IconButton>
       );
     }
     return (
-      <IconButton color="primary" onClick={togglePlayPause}>
+      <IconButton className={classes.colorDark} onClick={togglePlayPause}>
         {playing ? (
           <VolumeOffRoundedIcon size="small" />
         ) : (
@@ -141,6 +147,12 @@ export default function Home({ data }) {
         </Box>
         <Box className="sectionThree">
           <SectionThree shift={shift} />
+          <Box width={1} marginTop={3}>
+            <img
+              src="/images/maps.jpg"
+              width="100%"
+            />
+          </Box>
         </Box>
         <Box className="sectionRSVP">
           <SectionRSVP
@@ -149,6 +161,7 @@ export default function Home({ data }) {
             onSubmit={handleSubmit}
             values={values}
             loading={loading}
+            loadingMessage={loadingMessage}
             success={success}
           />
         </Box>

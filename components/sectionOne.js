@@ -7,7 +7,7 @@ import { Carousel } from 'react-responsive-carousel';
 
 const useStyles = makeStyles((theme) => ({
   boxContent: {
-    background: theme.palette.background.paper,
+    background: theme.palette.background.default,
     transform: 'translateY(-50px)',
     padding: theme.spacing(4, 0),
   },
@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
       textTransform: 'uppercase',
       fontWeight: 600,
       letterSpacing: 2,
+      color: theme.palette.primary.main,
     },
     '& h5': {
       fontFamily: `'Playfair Display', serif`,
@@ -53,6 +54,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(3, 0),
     '& .MuiTypography-root': {
       paddingBottom: theme.spacing(1.5),
+      color: theme.palette.grey[800],
     },
   },
 }));

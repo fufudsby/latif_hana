@@ -31,11 +31,11 @@ const SectionThree = ({ shift }) => {
           Akad Nikah
         </Typography>
         <TextIcon
-          text="Minggu, 06 Juni 2020<br />Pukul 07.00 - Selesai"
+          text="Rabu, 21 Juli 2021<br />Pukul 07.00 WIB - Selesai"
           icon={<AccessTimeIcon fontSize="small" />}
         />
         <TextIcon
-          text="Jl. Karangrejo Sawah IV No. 19 Surabaya, Jawa Timur"
+          text="Lokasi kediaman mempelai wanita"
           icon={<LocationOnIcon fontSize="small" />}
         />
       </Box>
@@ -48,11 +48,12 @@ const SectionThree = ({ shift }) => {
             Resepsi
           </Typography>
           <TextIcon
-            text="Minggu, 06 Juni 2020<br />Pukul 07.00 - Selesai"
+            text="Minggu, 08 Agustus 2021"
             icon={<AccessTimeIcon fontSize="small" />}
+            alignItems="center"
           />
           <TextIcon
-            text="Jl. Karangrejo Sawah IV No. 19 Surabaya, Jawa Timur"
+            text="Gedung Asrama Haji Kota Madiun, Jawa Timur"
             icon={<LocationOnIcon fontSize="small" />}
           />
         </Box>

@@ -5,19 +5,28 @@ import Title from 'components/title';
 
 const useStyles = makeStyles((theme) => ({
   avatar: {
-    maxWidth: theme.spacing(33),
-    maxHeight: theme.spacing(33),
+    maxWidth: theme.spacing(30),
+    maxHeight: theme.spacing(30),
     width: '85%',
     height: '85%',
   },
   name: {
     fontFamily: `'Playfair Display', serif`,
-    fontSize: '28px',
+    fontSize: '22px',
     lineHeight: 1.3,
-    marginBottom: theme.spacing(2),
+    marginBottom: theme.spacing(1.5),
   },
   desc: {
+    maxWidth: 300,
+    lineHeight: 1.2,
     fontSize: '16px',
+    color: theme.palette.grey[600],
+    '& span': {
+      padding: theme.spacing(1.5, 0, 0),
+      display: 'block',
+      fontWeight: 600,
+      color: theme.palette.grey[800],
+    },
   },
 }));
 
@@ -31,10 +40,11 @@ const SectionTwo = () => {
         <Avatar src="/images/img2.jpg" classes={{root: classes.avatar}} />
         <Box marginTop={3} paddingX={2} maxWidth="420px" textAlign="center">
           <Typography variant="h4" classes={{root: classes.name}}>
-            John Henry
+            Latif Hendra Sukmana, S.Ikom.
           </Typography>
           <Typography variant="body1" classes={{root: classes.desc}}>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cumsociis natoque.
+            Putra Bapak Herry Suherman, S.H. dan Ibu Purwati, S.H.
+            <span>Solo</span>
           </Typography>
         </Box>
       </Box>
@@ -42,10 +52,11 @@ const SectionTwo = () => {
         <Avatar src="/images/img3.jpg" classes={{root: classes.avatar}} />
         <Box marginTop={3} paddingX={2} maxWidth="420px" textAlign="center">
           <Typography variant="h4" classes={{root: classes.name}}>
-            Carol Colin
+            Rohana Zuraida, S.Ikom.
           </Typography>
           <Typography variant="body1" classes={{root: classes.desc}}>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cumsociis natoque.
+            Putri Bapak Mahmudi, S.Pd., M.Si. dan Ibu Elfi Ida Istiqomah, S.Pd.
+            <span>Madiun</span>
           </Typography>
         </Box>
       </Box>

@@ -5,7 +5,7 @@ import { Link } from 'react-scroll';
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    backgroundColor: theme.palette.background.paper,
+    background: theme.palette.background.default,
   },
   name: {
     fontSize: 125,
@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     fontSize: 18,
-    color: theme.palette.primary.main,
+    color: theme.palette.primary.dark,
     letterSpacing: 2,
     margin: theme.spacing(1, 0),
     '& span': {
@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
         position: 'absolute',
         width: 5,
         height: 5,
-        backgroundColor: theme.palette.primary.main,
+        backgroundColor: theme.palette.primary.dark,
         left: 0,
         top: '50%',
         transform: 'translate(-50%, -50%)',
@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
   },
   toGuest: {
     fontSize: 16,
-    color: theme.palette.primary.main,
+    color: theme.palette.primary.dark,
     fontStyle: 'italic',
     letterSpacing: 2,
     textTransform: 'capitalize',
@@ -64,15 +64,17 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 250,
     letterSpacing: 2,
     padding: 0,
-    color: theme.palette.primary.main,
-    border: `1px solid ${theme.palette.primary.main}`,
-    '&:hover': {
-      backgroundColor: 'transparent',
-    },
+    color: theme.palette.background.paper,
+    backgroundColor: theme.palette.primary.main,
+    borderRadius: theme.spacing(0.3),
+    // border: `1px solid ${theme.palette.primary.main}`,
+    // '&:hover': {
+    //   backgroundColor: 'transparent',
+    // },
     '& a': {
       display: 'block',
       width: '100%',
-      padding: theme.spacing(0.6, 2),
+      padding: theme.spacing(0.7, 2),
     }
   },
 }));
@@ -122,8 +124,6 @@ const Landing = ({ to }) => {
         </Typography>
       </Box>
       <Button
-        variant="outlined"
-        color="primary"
         disableElevation
         fullWidth
         classes={{root: classes.button}}

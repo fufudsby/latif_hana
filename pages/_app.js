@@ -12,11 +12,12 @@ function App({ Component, pageProps }) {
     },
     palette: {
       background: {
-        default: '#f1f3f4',
+        default: '#fcf1ef',
       },
       primary: {
         light: '#4488bf',
-        main: '#1e3647',
+        dark: '#1e3647',
+        main: '#e7ae9b',
       },
       warning: {
         light: '#f4f2c9',

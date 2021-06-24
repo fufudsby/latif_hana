@@ -5,13 +5,14 @@ import { Typography, Box } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
   text: {
     whiteSpace: 'pre-wrap',
+    color: theme.palette.grey[800],
   },
 }));
 
-const TextIcon = ({ text, icon }) => {
+const TextIcon = ({ text, icon, alignItems }) => {
   const classes = useStyles();
   return (
-    <Box display="flex" alignItems="flex-start" paddingBottom={1}>
+    <Box display="flex" alignItems={alignItems ? alignItems : 'flex-start'} paddingBottom={1}>
       <Box paddingTop={0.5}>
         {icon}
       </Box>
