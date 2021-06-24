@@ -13,6 +13,7 @@ import SectionRSVP from 'components/sectionRSVP';
 import { initializeApollo } from 'lib/apolloClient';
 import { GET_MESSAGES } from 'graphql/message';
 import { useRouter } from 'next/router';
+import useInfiniteScroll from 'react-infinite-scroll-hook';
 
 const widthWindow = 500;
 const useStyles = makeStyles((theme) => ({
@@ -45,18 +46,30 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Home({ data }) {
-  console.log('messages', data);
   const classes = useStyles();
   const router = useRouter();
   const { to, shift } = router.query;
   const [ messages, setMessages ] = useState(data);
+  const [ page, setPage ] = useState(2);
+  const [ loadingMessage, setLoadingMessage ] = useState(false);
   const [ loading, setLoading ] = useState(false);
   const [ values, setValues ] = useState({});
   const [ success, setSuccess ] = useState(false);
-  console.log('values', values);
   const handleChangeVal = useCallback((e) => {
     setValues({...values, [e.currentTarget.id]: e.currentTarget.value });
   }, [values]);
+  const fetchData = useCallback(async () => {
+    setLoadingMessage(true);
+    const v = await fetch(`/api/messages/${page}`);
+    const results = await v.json();
+    if (results && results.length > 0) {
+      setPage(page + 1);
+      setMessages(messages.concat(results));
+    } else {
+      setPage(null);
+    }
+    setLoadingMessage(false);
+  }, [page, messages]);
   const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -80,7 +93,7 @@ export default function Home({ data }) {
   }, [values]);
   const AudioPlayer = () => {
     const { togglePlayPause, ready, loading, playing } = useAudioPlayer({
-        src: '/audio/sabda_alam.mp3',
+        src: '/audio/back_sound.mp3',
         format: 'mp3',
         autoplay: true,
     });
@@ -102,10 +115,15 @@ export default function Home({ data }) {
       </IconButton>
     );
   };
+  const [ infiniteRef ] = useInfiniteScroll({
+    loadingMessage,
+    hasNextPage: page ? true : false,
+    onLoadMore: fetchData,
+  });
   return (
     <Container classes={{root: classes.container}}>
       <Head>
-        <title>Create Next App</title>
+        <title>HANA &amp; LATIF</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -134,6 +152,9 @@ export default function Home({ data }) {
             success={success}
           />
         </Box>
+        <Box paddingBottom={3}>
+          <div ref={infiniteRef} />
+        </Box>
       </Box>
       <Box
         position="fixed"
@@ -154,6 +175,7 @@ export async function getServerSideProps() {
   
   await apolloClient.query({
     query: GET_MESSAGES,
+    variables: { first: 3, page: 1 }
   }).then((v) => {
     messages = v.data.getMessages;
   }).catch(err => {

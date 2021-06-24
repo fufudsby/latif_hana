@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
 export const GET_MESSAGES = gql`
-  query GetMessages {
-    getMessages {
+  query GetMessages($first: Int!, $page: Int!) {
+    getMessages(first: $first, page: $page) {
       name
       message
       createdAt
@@ -11,8 +11,8 @@ export const GET_MESSAGES = gql`
 `
 
 export const GET_ALL_MESSAGES = gql`
-  query GetAllMessages {
-    getAllMessages {
+  query GetAllMessages($first: Int!, $page: Int!) {
+    getAllMessages(first: $first, page: $page) {
       id
       name
       message

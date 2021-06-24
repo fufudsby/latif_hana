@@ -39,7 +39,7 @@ const SectionRSVP = ({
  }) => {
   const classes = useStyles();
   return (
-    <Box paddingY={3} paddingX={3}>
+    <Box paddingTop={3} paddingX={3}>
       <Title text="RSVP" />
       {success ? (
         <Box marginBottom={3}>

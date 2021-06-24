@@ -47,7 +47,7 @@ export default function Check({ data }) {
     setLoading(true);
     setMessageId(id);
     const v = await fetch(
-      `/api/message/${id}`,
+      `/api/message/edit/${id}`,
       {
         body: JSON.stringify({ isActive: !isActive }),
         headers: {
@@ -112,6 +112,7 @@ export const getServerSideProps = async ({ req, res }) => {
   var messages = [];
   await apolloClient.query({
     query: GET_ALL_MESSAGES,
+    variables: { first: 10, page: 1 },
     context: { headers: session },
   }).then((v) => {
     messages = v.data.getAllMessages;
