@@ -25,10 +25,20 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
     color: theme.palette.background.paper,
+    border: `1px solid #d59e97`,
+    '&:hover': {
+      backgroundColor: theme.palette.primary.main,
+    },
   },
   textField: {
     '& label, & input, & textarea': {
       fontSize: 16,
+    },
+    '& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline': {
+      borderColor: theme.palette.grey[600],
+    },
+    '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline': {
+      borderColor: theme.palette.primary.main,
     },
   },
 }));

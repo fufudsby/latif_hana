@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 250,
     margin: theme.spacing(0, 'auto'),
     position: 'relative',
+    textShadow: `0 0 125px #d59e97`,
     '& span': {
       fontSize: 15,
       fontFamily: '\'Source Sans Pro\', sans-serif',
@@ -67,10 +68,10 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.background.paper,
     backgroundColor: theme.palette.primary.main,
     borderRadius: theme.spacing(0.3),
-    // border: `1px solid ${theme.palette.primary.main}`,
-    // '&:hover': {
-    //   backgroundColor: 'transparent',
-    // },
+    border: `1px solid #d59e97`,
+    '&:hover': {
+      backgroundColor: theme.palette.primary.main,
+    },
     '& a': {
       display: 'block',
       width: '100%',

@@ -17,7 +17,7 @@ function App({ Component, pageProps }) {
       primary: {
         light: '#4488bf',
         dark: '#1e3647',
-        main: '#e7ae9b',
+        main: '#e4b9a9',
       },
       warning: {
         light: '#f4f2c9',
