@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
   },
   toGuest: {
     fontSize: 16,
-    color: theme.palette.primary.dark,
+    color: theme.palette.grey[700],
     fontStyle: 'italic',
     letterSpacing: 2,
     textTransform: 'capitalize',
@@ -80,9 +80,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Landing = ({ to }) => {
+const Landing = ({ to, playMusic }) => {
   console.log('render Landing');
   const classes = useStyles();
+  const playMusicOn = () => {
+    playMusic();
+  };
   return (
     <Box
       height="100vh"
@@ -94,7 +97,7 @@ const Landing = ({ to }) => {
       className={classes.container}
     >
       <Box width={1} display="flex" flexDirection="column" alignItems="center">
-        <Box width={1} marginBottom={1}>
+        <Box width={1} marginBottom={5}>
           <Typography
             className="custom-font"
             classes={{root: classes.name}}
@@ -111,13 +114,13 @@ const Landing = ({ to }) => {
             Hana
           </Typography>
         </Box>
-        <Typography
+        {/* <Typography
           classes={{root: classes.date}}
         >
           <span>08</span>
           <span>23</span>
           <span>2021</span>
-        </Typography>
+        </Typography> */}
         <Typography
           classes={{root: classes.toGuest}}
         >
@@ -125,9 +128,11 @@ const Landing = ({ to }) => {
         </Typography>
       </Box>
       <Button
+        type="button"
         disableElevation
         fullWidth
         classes={{root: classes.button}}
+        
       >
         <Link
           to="sectionOne"
@@ -136,7 +141,7 @@ const Landing = ({ to }) => {
           offset={0}
           duration={500}
         >
-          Open Invitation
+          <div onClick={() => playMusicOn()}>Open Invitation</div>
         </Link>
       </Button>
     </Box>

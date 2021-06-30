@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import Head from 'next/head';
 import { makeStyles } from '@material-ui/core/styles';
 import { Container, Box, IconButton, CircularProgress } from '@material-ui/core';
@@ -14,6 +14,7 @@ import { initializeApollo } from 'lib/apolloClient';
 import { GET_MESSAGES } from 'graphql/message';
 import { useRouter } from 'next/router';
 import useInfiniteScroll from 'react-infinite-scroll-hook';
+import { animateScroll } from 'react-scroll';
 
 const widthWindow = 500;
 const useStyles = makeStyles((theme) => ({
@@ -58,9 +59,17 @@ export default function Home({ data }) {
   const [ messages, setMessages ] = useState(data);
   const [ page, setPage ] = useState(2);
   const [ loadingMessage, setLoadingMessage ] = useState(false);
-  const [ loading, setLoading ] = useState(false);
+  const [ loadingRSVP, setLoadingRSVP ] = useState(false);
   const [ values, setValues ] = useState({});
   const [ success, setSuccess ] = useState(false);
+  const [ openBody, setOpenBody ] = useState(false);
+  const customCss = `body { overflow-y: ${openBody ? 'auto' : 'hidden'} }`;
+  const { togglePlayPause, ready, loading, playing, play, pause } = useAudioPlayer({
+    src: '/audio/back_sound.mp3',
+    format: 'mp3',
+    html5: true,
+    autoplay: false,
+  });
   const handleChangeVal = useCallback((e) => {
     setValues({...values, [e.currentTarget.id]: e.currentTarget.value });
   }, [values]);
@@ -78,7 +87,7 @@ export default function Home({ data }) {
   }, [page, messages]);
   const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
-    setLoading(true);
+    setLoadingRSVP(true);
     const v = await fetch(
       '/api/message/new',
       {
@@ -95,14 +104,9 @@ export default function Home({ data }) {
       setValues({});
       setSuccess(true);
     }
-    setLoading(false);
+    setLoadingRSVP(false);
   }, [values]);
   const AudioPlayer = () => {
-    const { togglePlayPause, ready, loading, playing } = useAudioPlayer({
-        src: '/audio/back_sound.mp3',
-        format: 'mp3',
-        autoplay: true,
-    });
     if (!ready && !loading) return null;
     if (loading) {
       return (
@@ -112,7 +116,7 @@ export default function Home({ data }) {
       );
     }
     return (
-      <IconButton className={classes.colorDark} onClick={togglePlayPause}>
+      <IconButton className={classes.colorDark} onClick={() => togglePlayPause()}>
         {playing ? (
           <VolumeOffRoundedIcon size="small" />
         ) : (
@@ -121,6 +125,13 @@ export default function Home({ data }) {
       </IconButton>
     );
   };
+  useEffect(() => {
+    animateScroll.scrollToTop(0);
+  }, []);
+  const handlePlayMusic = useCallback(() => {
+    setOpenBody(true);
+    play();
+  }, [play]);
   const [ infiniteRef ] = useInfiniteScroll({
     loadingMessage,
     hasNextPage: page ? true : false,
@@ -131,6 +142,7 @@ export default function Home({ data }) {
       <Head>
         <title>HANA &amp; LATIF</title>
         <link rel="icon" href="/favicon.ico" />
+        <style>{customCss}</style>
       </Head>
 
       <Box
@@ -138,7 +150,7 @@ export default function Home({ data }) {
         overflow="hidden"
         minHeight="100vh"
       >
-        <Landing to={to} />
+        <Landing to={to} playMusic={handlePlayMusic} />
         <Box className="sectionOne">
           <SectionOne />
         </Box>
@@ -147,12 +159,12 @@ export default function Home({ data }) {
         </Box>
         <Box className="sectionThree">
           <SectionThree shift={shift} />
-          <Box width={1} marginTop={3}>
+          {/* <Box width={1} marginTop={3}>
             <img
               src="/images/maps.jpg"
               width="100%"
             />
-          </Box>
+          </Box> */}
         </Box>
         <Box className="sectionRSVP">
           <SectionRSVP
@@ -160,7 +172,7 @@ export default function Home({ data }) {
             onChangeVal={handleChangeVal}
             onSubmit={handleSubmit}
             values={values}
-            loading={loading}
+            loading={loadingRSVP}
             loadingMessage={loadingMessage}
             success={success}
           />

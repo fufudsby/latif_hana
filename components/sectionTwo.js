@@ -40,10 +40,10 @@ const SectionTwo = () => {
         <Avatar src="/images/img2.jpg" classes={{root: classes.avatar}} />
         <Box marginTop={3} paddingX={2} maxWidth="420px" textAlign="center">
           <Typography variant="h4" classes={{root: classes.name}}>
-            Latif Hendra Sukmana, S.Ikom.
+            Latif Hendra Sukmana, S.I.Kom.
           </Typography>
           <Typography variant="body1" classes={{root: classes.desc}}>
-            Putra Bapak Herry Suherman, S.H. dan Ibu Purwati, S.H.
+            Putra Bapak Herry Suherman, S.H. dan<br />Ibu Purwati, S.H.
             <span>Solo</span>
           </Typography>
         </Box>
@@ -52,10 +52,10 @@ const SectionTwo = () => {
         <Avatar src="/images/img3.jpg" classes={{root: classes.avatar}} />
         <Box marginTop={3} paddingX={2} maxWidth="420px" textAlign="center">
           <Typography variant="h4" classes={{root: classes.name}}>
-            Rohana Zuraida, S.Ikom.
+            Rohana Zuraida, S.I.Kom.
           </Typography>
           <Typography variant="body1" classes={{root: classes.desc}}>
-            Putri Bapak Mahmudi, S.Pd., M.Si. dan Ibu Elfi Ida Istiqomah, S.Pd.
+            Putri Bapak Mahmudi, S.Pd., M.Si. dan<br />Ibu Elfi Ida Istiqomah, S.Pd.
             <span>Madiun</span>
           </Typography>
         </Box>

@@ -14,7 +14,12 @@ const useStyles = makeStyles((theme) => ({
     letterSpacing: theme.spacing(0.15),
     marginBottom: theme.spacing(1),
     textTransform: 'uppercase',
-  }
+  },
+  note: {
+    '& p': {
+      fontSize: 15,
+    },
+  },
 }));
 
 const SectionThree = ({ shift }) => {
@@ -39,6 +44,13 @@ const SectionThree = ({ shift }) => {
           icon={<LocationOnIcon fontSize="small" />}
           alignItems="center"
         />
+        <Box fontStyle="italic" className={classes.note}>
+          <TextIcon
+            text="* Khusus keluarga"
+            icon="&nbsp;&nbsp;&nbsp;&nbsp;"
+            alignItems="center"
+          />
+        </Box>
       </Box>
       {shift == 'pagi' &&
         <Box marginX="auto" maxWidth={maxWidth}>
