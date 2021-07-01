@@ -64,7 +64,7 @@ export default function Home({ data }) {
   const [ success, setSuccess ] = useState(false);
   const [ openBody, setOpenBody ] = useState(false);
   const customCss = `body { overflow-y: ${openBody ? 'auto' : 'hidden'} }`;
-  const { togglePlayPause, ready, loading, playing, play, pause } = useAudioPlayer({
+  const { togglePlayPause, ready, loading, playing, play } = useAudioPlayer({
     src: '/audio/back_sound.mp3',
     format: 'mp3',
     html5: true,
@@ -187,6 +187,7 @@ export default function Home({ data }) {
         className={classes.audioControl}
         display="flex"
         justifyContent="flex-end"
+        zIndex={openBody ? '99' : '-1'}
       >
         <AudioPlayer />
       </Box>
