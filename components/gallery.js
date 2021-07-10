@@ -35,6 +35,8 @@ const Gallery = () => {
     centerPadding: '80px',
     slidesToShow: 1,
     slidesToScroll: 1,
+    swipeToSlide: true,
+    draggable: true,
     variableWidth: true,
     autoplay: true,
     speed: 2000,

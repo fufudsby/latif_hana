@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
   text: {
     textAlign: 'center',
     paddingTop: theme.spacing(2),
-    fontSize: 14,
+    whiteSpace: 'pre-wrap',
   },
 }));
 
@@ -22,10 +22,10 @@ const vImg = [
 ];
 
 const vText = [
-  'Suhu tubuh di bawah 27.5 ºC',
+  'Suhu tubuh di bawah\n27.5 ºC',
   'Wajib memakai masker',
   'Wajib cuci tangan',
-  'Menjaga jarak 1 - 1.5 meter',
+  'Menjaga jarak\n1 - 1.5 meter',
 ];
 
 const Covid19 = () => {
@@ -37,7 +37,7 @@ const Covid19 = () => {
       <Box marginTop={4}>
         <Grid container spacing={3}>
           {[0, 1, 2, 3].map((v) => (
-            <Grid item xs={6}>
+            <Grid item xs={6} key={v}>
               <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center">
                 <img src={`/images/${vImg[v]}`} className={classes.img} />
                 <Typography variant="body2" className={classes.text}>
