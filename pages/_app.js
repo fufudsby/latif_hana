@@ -1,11 +1,11 @@
 import Head from 'next/head';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { MuiThemeProvider, createTheme } from '@material-ui/core/styles';
 import { AudioPlayerProvider } from 'react-use-audio-player';
 import 'styles/stylesheet.css';
 
 function App({ Component, pageProps }) {
-  const defaultTheme = createMuiTheme({
+  const defaultTheme = createTheme({
     typography: {
       fontFamily: '\'Source Sans Pro\', sans-serif',
       fontSize: 16,

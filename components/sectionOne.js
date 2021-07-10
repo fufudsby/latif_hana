@@ -66,7 +66,7 @@ const SectionOne = () => {
     <Box minHeight="100vh" display="flex" flexDirection="column" alignItems="flex-end">
       <Box width={1} height={300} position="relative" marginX="auto">
         <Image
-          src="/images/img-1.jpg"
+          src="/images/img/img2.jpg"
           layout="fill"
           objectFit="cover"
         />
