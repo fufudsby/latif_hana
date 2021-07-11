@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
         right: 6,
         width: 1,
         height: '84%',
-        background: theme.palette.grey[600],
+        background: theme.palette.grey[700],
         transform: 'translateY(-50%)',
       },  
     },
