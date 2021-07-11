@@ -21,10 +21,11 @@ const useStyles = makeStyles((theme) => ({
       color: theme.palette.primary.main,
     },
     '& h5': {
-      fontFamily: `'Playfair Display', serif`,
-      fontSize: '28px',
+      fontSize: 24,
+      fontWeight: 600,
       lineHeight: 1.3,
       margin: theme.spacing(1, 0),
+      letterSpacing: 0.8,
     },
     // '&:before': {
     //   content: `''`,
@@ -51,6 +52,7 @@ const useStyles = makeStyles((theme) => ({
   },
   carouselItem: {
     textAlign: 'left',
+    letterSpacing: 0.8,
     padding: theme.spacing(3, 0),
     '& .MuiTypography-root': {
       paddingBottom: theme.spacing(1.5),
@@ -66,7 +68,7 @@ const SectionOne = () => {
     <Box minHeight="100vh" display="flex" flexDirection="column" alignItems="flex-end">
       <Box width={1} height={300} position="relative" marginX="auto">
         <Image
-          src="/images/img/img2.jpg"
+          src="/images/img/img6.jpg"
           layout="fill"
           objectFit="cover"
         />

@@ -7,12 +7,13 @@ import Wishes from 'components/wishes';
 const useStyles = makeStyles((theme) => ({
   typo1: {
     fontSize: 16,
+    letterSpacing: 0.8,
     marginBottom: theme.spacing(1),
     textAlign: 'center',
     color: theme.palette.grey[800],
   },
   typo2: {
-    fontSize: 77,
+    fontSize: 74,
     textAlign: 'center',
     lineHeight: 1,
     color: theme.palette.primary.main,
@@ -20,9 +21,12 @@ const useStyles = makeStyles((theme) => ({
   typo3: {
     textAlign: 'center',
     fontSize: 16,
+    letterSpacing: 0.8,
     color: theme.palette.grey[600],
   },
   submit: {
+    fontSize: 15,
+    letterSpacing: 0.8,
     margin: theme.spacing(3, 0, 2),
     color: theme.palette.background.paper,
     border: `1px solid #d59e97`,
@@ -33,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
   textField: {
     '& label, & input, & textarea': {
       fontSize: 16,
+      letterSpacing: 0.8,
     },
     '& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline': {
       borderColor: theme.palette.grey[600],

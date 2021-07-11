@@ -11,15 +11,17 @@ const useStyles = makeStyles((theme) => ({
     height: '85%',
   },
   name: {
-    fontFamily: `'Playfair Display', serif`,
-    fontSize: '22px',
+    fontWeight: 600,
+    fontSize: 18,
+    letterSpacing: 0.8,
     lineHeight: 1.3,
     marginBottom: theme.spacing(1.5),
   },
   desc: {
     maxWidth: 300,
     lineHeight: 1.2,
-    fontSize: '16px',
+    fontSize: 15,
+    letterSpacing: 0.8,
     color: theme.palette.grey[600],
     '& span': {
       padding: theme.spacing(1.5, 0, 0),
@@ -38,7 +40,7 @@ const SectionTwo = () => {
       <Title text="Once upon a time" />
       <Box display="flex" flexDirection="column" alignItems="center" paddingY={3}>
         <Avatar src="/images/img2.jpg" classes={{root: classes.avatar}} />
-        <Box marginTop={3} paddingX={2} maxWidth="420px" textAlign="center">
+        <Box marginTop={3} paddingX={1.5} maxWidth="420px" textAlign="center">
           <Typography variant="h4" classes={{root: classes.name}}>
             Latif Hendra Sukmana, S.I.Kom.
           </Typography>

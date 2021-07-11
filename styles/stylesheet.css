@@ -18,6 +18,28 @@ a {
        url('../fonts/kissita_script-webfont.svg') format('svg');
 }
 
+@font-face {
+  font-family: 'Messina Sans';
+  src: url('../fonts/MessinaSans-Light.eot');
+  src: url('../fonts/MessinaSans-Light.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/MessinaSans-Light.woff2') format('woff2'),
+       url('../fonts/MessinaSans-Light.woff') format('woff'),
+       url('../fonts/MessinaSans-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Messina Sans';
+  src: url('../fonts/MessinaSans-Bold.eot');
+  src: url('../fonts/MessinaSans-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/MessinaSans-Bold.woff2') format('woff2'),
+       url('../fonts/MessinaSans-Bold.woff') format('woff'),
+       url('../fonts/MessinaSans-Bold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
 .custom-font {
   font-family: 'Kissita Script', 'Source Sans Pro', sans-serif !important;
 }

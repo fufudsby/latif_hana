@@ -11,6 +11,8 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     paddingTop: theme.spacing(2),
     whiteSpace: 'pre-wrap',
+    fontSize: 15,
+    letterSpacing: 0.5,
   },
 }));
 
@@ -22,10 +24,10 @@ const vImg = [
 ];
 
 const vText = [
-  'Suhu tubuh di bawah\n27.5 ºC',
+  'Suhu tubuh di bawah 27.5 ºC',
   'Wajib memakai masker',
   'Wajib cuci tangan',
-  'Menjaga jarak\n1 - 1.5 meter',
+  'Menjaga jarak\n1-1.5 meter',
 ];
 
 const Covid19 = () => {

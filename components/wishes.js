@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { Box, Typography, CircularProgress } from '@material-ui/core';
+import { Box, CircularProgress } from '@material-ui/core';
 import CardWishes from 'components/cardWishes';
 import Title2 from 'components/title2';
 
@@ -11,7 +11,7 @@ const Wishes = ({ messages, loadingMessage }) => {
         <CardWishes key={i} message={d} />
       ))}
       {loadingMessage &&
-        <Box display="flex" justifyContent="center" paddingTop={3}>
+        <Box display="flex" justifyContent="center" paddingTop={3} paddingBottom={1.5}>
           <CircularProgress size={22} thickness={4.5} />
         </Box>
       }

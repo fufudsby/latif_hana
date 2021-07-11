@@ -7,6 +7,8 @@ const useStyles = makeStyles((theme) => ({
   text: {
     whiteSpace: 'pre-wrap',
     color: theme.palette.grey[800],
+    fontSize: 16,
+    letterSpacing: 0.8,
     '&.link': {
       textDecoration: 'underline',
       '&:hover': {
@@ -16,26 +18,21 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const TextIcon = ({ text, icon, alignItems, link }) => {
+const TextIcon = ({ text, link }) => {
   const classes = useStyles();
   return (
-    <Box display="flex" alignItems={alignItems ? alignItems : 'flex-start'} paddingBottom={1}>
-      <Box paddingTop={0.5}>
-        {icon}
-      </Box>
-      <Box paddingLeft={1}>
-        {link ? (
-          <Link href={link}>
-            <a className={`link ${classes.text}`} target="_blank">
-              <span dangerouslySetInnerHTML={{ __html: text }} />
-            </a>
-          </Link>
-        ) : (
-          <Typography variant="body2" classes={{root: classes.text}}>
+    <Box paddingBottom={1}>
+      {link ? (
+        <Link href={link}>
+          <a className={`link ${classes.text}`} target="_blank">
             <span dangerouslySetInnerHTML={{ __html: text }} />
-          </Typography>
-        )}
-      </Box>
+          </a>
+        </Link>
+      ) : (
+        <Typography variant="body2" classes={{root: classes.text}}>
+          <span dangerouslySetInnerHTML={{ __html: text }} />
+        </Typography>
+      )}
     </Box>
   );
 };

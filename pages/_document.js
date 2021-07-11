@@ -1,9 +1,9 @@
 import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheets } from '@material-ui/styles';
-import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
+import { createTheme, responsiveFontSizes } from '@material-ui/core/styles';
 
-const theme = responsiveFontSizes(createMuiTheme());
+const theme = responsiveFontSizes(createTheme());
 
 class MyDocument extends Document {
   render() {
@@ -13,7 +13,7 @@ class MyDocument extends Document {
           <meta charSet="utf-8" />
           <meta name="theme-color" content={theme.palette.primary.main} />
           <link rel="shortcut icon" href="/favicon/favicon.ico" />
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700&display=swap" />
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" />
         </Head>
         <body>
           <Main />

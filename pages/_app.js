@@ -7,7 +7,7 @@ import 'styles/stylesheet.css';
 function App({ Component, pageProps }) {
   const defaultTheme = createTheme({
     typography: {
-      fontFamily: '\'Source Sans Pro\', sans-serif',
+      fontFamily: '\'Messina Sans\', sans-serif',
       fontSize: 16,
     },
     palette: {
@@ -33,8 +33,7 @@ function App({ Component, pageProps }) {
       <Head>
         <link rel="shortcut icon" href="/favicon/favicon.ico" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" /> 
-        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet" />
       </Head>
       <CssBaseline />
       <AudioPlayerProvider>

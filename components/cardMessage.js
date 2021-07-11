@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: props.isActive ? theme.palette.success.main : theme.palette.error.main,
     padding: theme.spacing(0.3, 2),
     color: '#FFF',
-    fontSize: 13,
+    fontSize: 14,
   }),
 }));
 
