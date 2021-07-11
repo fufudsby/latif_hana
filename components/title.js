@@ -5,7 +5,7 @@ import { Typography } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
   title: {
     textTransform: 'uppercase',
-    fontSize: 18,
+    fontSize: 17,
     fontWeight: 600,
     letterSpacing: 2,
     textAlign: 'center',

@@ -9,7 +9,7 @@ import Covid19 from 'components/covid19';
 const useStyles = makeStyles((theme) => ({
   typo1: {
     fontWeight: 600,
-    fontSize: 16,
+    fontSize: 15,
     letterSpacing: 0.8,
     letterSpacing: theme.spacing(0.15),
     marginBottom: theme.spacing(1),
@@ -17,8 +17,23 @@ const useStyles = makeStyles((theme) => ({
   },
   note: {
     '& p': {
-      fontSize: 16,
+      fontSize: 15,
       letterSpacing: 0.8,
+    },
+  },
+  gridItem: {
+    position: 'relative',
+    '&.with-line': {
+      '&:before': {
+        content: `''`,
+        position: 'absolute',
+        top: '50%',
+        right: 6,
+        width: 1,
+        height: '84%',
+        background: theme.palette.grey[600],
+        transform: 'translateY(-50%)',
+      },  
     },
   },
 }));
@@ -30,8 +45,8 @@ const SectionThree = ({ shift }) => {
     <>
       <Box paddingX={3}>
         <Title text="Resepsi &amp; Akad" />
-        <Grid container spacing={2}>
-          <Grid item xs={6}>
+        <Grid container spacing={3}>
+          <Grid item xs={shift ? 6 : 12} className={`${classes.gridItem} ${shift ? 'with-line' : ''}`}>
             <Typography
               classes={{root: classes.typo1}}
               variant="body1"

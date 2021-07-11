@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
   text: {
     whiteSpace: 'pre-wrap',
     color: theme.palette.grey[800],
-    fontSize: 16,
+    fontSize: 15,
     letterSpacing: 0.8,
     '&.link': {
       textDecoration: 'underline',

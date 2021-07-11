@@ -8,7 +8,7 @@ function App({ Component, pageProps }) {
   const defaultTheme = createTheme({
     typography: {
       fontFamily: '\'Messina Sans\', sans-serif',
-      fontSize: 16,
+      fontSize: 15,
     },
     palette: {
       background: {

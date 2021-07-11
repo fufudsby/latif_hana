@@ -14,14 +14,14 @@ const useStyles = makeStyles((theme) => ({
   boxTitle: {
     margin: theme.spacing(0, 4),
     '& h6': {
-      fontSize: '14px',
+      fontSize: '13px',
       textTransform: 'uppercase',
       fontWeight: 600,
       letterSpacing: 2,
       color: theme.palette.primary.main,
     },
     '& h5': {
-      fontSize: 24,
+      fontSize: 23,
       fontWeight: 600,
       lineHeight: 1.3,
       margin: theme.spacing(1, 0),

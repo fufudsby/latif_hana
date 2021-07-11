@@ -5,13 +5,13 @@ import Title from 'components/title';
 
 const useStyles = makeStyles((theme) => ({
   typo1: {
-    fontSize: 16,
+    fontSize: 15,
     letterSpacing: 0.8,
     fontWeight: 600,
     marginBottom: theme.spacing(0.5),
   },
   typo2: {
-    fontSize: 16,
+    fontSize: 15,
     letterSpacing: 0.8,
   },
 }));

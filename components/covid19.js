@@ -5,7 +5,7 @@ import Title2 from 'components/title2';
 
 const useStyles = makeStyles((theme) => ({
   img: {
-    height: 88,
+    height: 82,
   },
   text: {
     textAlign: 'center',
@@ -24,7 +24,7 @@ const vImg = [
 ];
 
 const vText = [
-  'Suhu tubuh di bawah 27.5 ºC',
+  'Suhu tubuh di bawah 37.5 ºC',
   'Wajib memakai masker',
   'Wajib cuci tangan',
   'Menjaga jarak\n1-1.5 meter',

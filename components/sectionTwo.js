@@ -5,14 +5,14 @@ import Title from 'components/title';
 
 const useStyles = makeStyles((theme) => ({
   avatar: {
-    maxWidth: theme.spacing(30),
-    maxHeight: theme.spacing(30),
+    maxWidth: theme.spacing(28),
+    maxHeight: theme.spacing(28),
     width: '85%',
     height: '85%',
   },
   name: {
     fontWeight: 600,
-    fontSize: 18,
+    fontSize: 17,
     letterSpacing: 0.8,
     lineHeight: 1.3,
     marginBottom: theme.spacing(1.5),
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   desc: {
     maxWidth: 300,
     lineHeight: 1.2,
-    fontSize: 15,
+    fontSize: 14,
     letterSpacing: 0.8,
     color: theme.palette.grey[600],
     '& span': {

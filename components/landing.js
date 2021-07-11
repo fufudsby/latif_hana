@@ -59,23 +59,41 @@ const useStyles = makeStyles((theme) => ({
     textTransform: 'capitalize',
   },
   button: {
-    fontSize: 12,
+    fontSize: 15,
     marginTop: theme.spacing(5),
-    borderRadius: 0,
-    maxWidth: 250,
-    letterSpacing: 2,
+    borderRadius: '50%',
+    letterSpacing: 10,
+    lineHeight: 1.3,
+    textAlign: 'center',
     padding: 0,
+    width: theme.spacing(10),
+    height: theme.spacing(10),
     color: theme.palette.background.paper,
     backgroundColor: theme.palette.primary.main,
-    borderRadius: theme.spacing(0.3),
-    border: `1px solid #d59e97`,
+    overflow: 'hidden',
+    position: 'relative',
+    '&:before': {
+      content: `''`,
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      width: '92%',
+      height: '92%',
+      border: `1px solid ${theme.palette.background.paper}`,
+      transform: 'translate(-50%, -50%)',
+      borderRadius: '50%',
+    },
     '&:hover': {
       backgroundColor: theme.palette.primary.main,
     },
     '& a': {
-      display: 'block',
+      display: 'flex',
+      justifyContent: 'center',
       width: '100%',
-      padding: theme.spacing(0.7, 2),
+      '& div': {
+        transform: 'translateX(5px)',
+        whiteSpace: 'pre-line',
+      },
     }
   },
 }));
@@ -141,7 +159,7 @@ const Landing = ({ to, playMusic }) => {
           offset={0}
           duration={500}
         >
-          <div onClick={() => playMusicOn()}>Open Invitation</div>
+          <div onClick={() => playMusicOn()}>{'OP\nEN'}</div>
         </Link>
       </Button>
     </Box>
