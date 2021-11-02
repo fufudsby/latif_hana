@@ -5,23 +5,24 @@ import { Link } from 'react-scroll';
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    background: theme.palette.background.default,
+    background: `${theme.palette.background.default} url('/images/img/img10.jpg') no-repeat center center`,
+    backgroundSize: 'auto 120%',
   },
   name: {
-    fontSize: 125,
-    color: theme.palette.primary.main,
+    fontSize: 92,
+    color: theme.palette.background.paper,
     lineHeight: 0.8,
-    width: '90%',
-    maxWidth: 250,
+    width: '92%',
+    textAlign: 'center',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
     margin: theme.spacing(0, 'auto'),
     position: 'relative',
-    textShadow: `0 0 125px #d59e97`,
+    textShadow: `0 3px 15px ${theme.palette.primary.dark}`,
     '& span': {
-      fontSize: 15,
-      fontFamily: '\'Source Sans Pro\', sans-serif',
-      transform: 'translateY(-30px)',
-      letterSpacing: 4,
-      paddingLeft: theme.spacing(2),
+      fontSize: 36,
+      margin: theme.spacing(0, 2.5),
     },
   },
   date: {
@@ -53,14 +54,15 @@ const useStyles = makeStyles((theme) => ({
   },
   toGuest: {
     fontSize: 16,
-    color: theme.palette.grey[700],
+    color: theme.palette.background.paper,
     fontStyle: 'italic',
     letterSpacing: 2,
     textTransform: 'capitalize',
+    textShadow: `0 0px 5px ${theme.palette.primary.dark}`,
   },
   button: {
     fontSize: 15,
-    marginTop: theme.spacing(5),
+    marginTop: theme.spacing(3),
     borderRadius: '50%',
     letterSpacing: 10,
     lineHeight: 1.3,
@@ -108,29 +110,35 @@ const Landing = ({ to, playMusic }) => {
     <Box
       height="100vh"
       display="flex"
-      justifyContent="space-around"
+      justifyContent="space-between"
       alignItems="center"
       flexDirection="column"
       paddingY={5}
       className={classes.container}
     >
-      <Box width={1} display="flex" flexDirection="column" alignItems="center">
-        <Box width={1} marginBottom={5}>
+      <Box
+        width={1}
+        flexGrow={1}
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+      >
+        <Box width={1} marginBottom={3}>
           <Typography
             className="custom-font"
             classes={{root: classes.name}}
-            style={{textAlign: 'left'}}
           >
-            Latif
-            <span>AND</span>
+            Latif <span>&amp;</span> Hana
+            {/* <span>&amp;</span> */}
           </Typography>
-          <Typography
+          {/* <Typography
             className="custom-font"
             classes={{root: classes.name}}
             style={{textAlign: 'right'}}
           >
             Hana
-          </Typography>
+          </Typography> */}
         </Box>
         {/* <Typography
           classes={{root: classes.date}}

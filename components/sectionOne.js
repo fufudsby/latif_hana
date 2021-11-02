@@ -6,13 +6,15 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 
 const useStyles = makeStyles((theme) => ({
+  bgGradient: {
+    background: 'linear-gradient(180deg, rgba(228,185,169,0.7511204310825893) 0%, rgba(252,241,239,1) 40%)',
+  },
   boxContent: {
-    background: theme.palette.background.default,
-    transform: 'translateY(-50px)',
     padding: theme.spacing(4, 0),
+    width: '100%',
   },
   boxTitle: {
-    margin: theme.spacing(0, 4),
+    margin: theme.spacing(0, 2.5),
     '& h6': {
       fontSize: '13px',
       textTransform: 'uppercase',
@@ -21,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
       color: theme.palette.primary.main,
     },
     '& h5': {
-      fontSize: 23,
+      fontSize: 20,
       fontWeight: 600,
       lineHeight: 1.3,
       margin: theme.spacing(1, 0),
@@ -46,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: theme.palette.primary.main,
       },
       '& ul.slider li.slide': {
-        padding: theme.spacing(0, 4),
+        padding: theme.spacing(0, 2.5),
       },
     },
   },
@@ -59,21 +61,32 @@ const useStyles = makeStyles((theme) => ({
       color: theme.palette.grey[800],
     },
   },
+  imgTop: {
+    width: '90%',
+    height: 230,
+    borderRadius: theme.spacing(1),
+    overflow: 'hidden',
+  },
 }));
 
 const SectionOne = () => {
   console.log('render SectionOne');
   const classes = useStyles();
   return (
-    <Box minHeight="100vh" display="flex" flexDirection="column" alignItems="flex-end">
-      <Box width={1} height={300} position="relative" marginX="auto">
+    <Box minHeight="100vh" display="flex" flexDirection="column" alignItems="flex-end" className={classes.bgGradient}>
+      <Box
+        position="relative"
+        marginX="auto"
+        marginTop={3}
+        className={classes.imgTop}
+      >
         <Image
           src="/images/img/img6.jpg"
           layout="fill"
           objectFit="cover"
         />
       </Box>
-      <Box width="96%" className={classes.boxContent}>
+      <Box className={classes.boxContent}>
         <Box position="relative" className={classes.boxTitle}>
           <Typography variant="h6">
             The Story

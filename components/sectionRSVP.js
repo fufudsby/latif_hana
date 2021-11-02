@@ -60,7 +60,7 @@ const SectionRSVP = ({
   const classes = useStyles();
   return (
     <Box paddingTop={8} paddingX={3}>
-      <Title text="RSVP" />
+      <Title text="Berikan Ucapan &amp; Doa" />
       {loading ? (
         <Box display="flex" justifyContent="center" paddingBottom={6} paddingTop={3}>
           <CircularProgress size={22} thickness={4.5} />
@@ -78,9 +78,9 @@ const SectionRSVP = ({
             </Box>
           ) : (
             <>
-              <Typography classes={{root: classes.typo1}}>
+              {/* <Typography classes={{root: classes.typo1}}>
                 Valid for 2 people dan Please kindly help us prepare everything better by confirming your attendance to our wedding event with the following RSVP form:
-              </Typography>
+              </Typography> */}
               <form onSubmit={onSubmit}>
                 <TextField
                   variant="outlined"

@@ -24,7 +24,6 @@ const useStyles = makeStyles((theme) => ({
   },
   boxContainer: {
     boxShadow: '0 0 48px 0 rgba(0,0,0,.2)',
-    background: theme.palette.background.default,
     '& .sectionTwo': {
       paddingBottom: theme.spacing(6),
     },
