@@ -82,7 +82,7 @@ const SectionThree = () => {
             Akad Nikah
           </Typography>
           <TextIcon
-            text="Rabu, 21 Juli 2021<br />Pukul 07.00 WIB - Selesai"
+            text="Rabu, 21 Juli 2021<br />Pukul 07.00 - Selesai"
             isDark={true}
           />
           <TextIcon
