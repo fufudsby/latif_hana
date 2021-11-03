@@ -5,7 +5,7 @@ import { Link } from 'react-scroll';
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    background: `${theme.palette.background.default} url('/images/img/img10.jpg') no-repeat center center`,
+    background: `${theme.palette.background.default} url('/images/img/img7.jpg') no-repeat center bottom`,
     backgroundSize: 'auto 120%',
   },
   name: {
@@ -61,41 +61,21 @@ const useStyles = makeStyles((theme) => ({
     textShadow: `0 0px 5px ${theme.palette.primary.dark}`,
   },
   button: {
-    fontSize: 15,
+    fontSize: 13,
     marginTop: theme.spacing(3),
-    borderRadius: '50%',
-    letterSpacing: 10,
-    lineHeight: 1.3,
+    borderRadius: theme.spacing(3),
+    letterSpacing: 3,
     textAlign: 'center',
     padding: 0,
-    width: theme.spacing(10),
-    height: theme.spacing(10),
-    color: theme.palette.background.paper,
-    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.primary.dark,
+    backgroundColor: theme.palette.background.paper,
     overflow: 'hidden',
     position: 'relative',
-    '&:before': {
-      content: `''`,
-      position: 'absolute',
-      top: '50%',
-      left: '50%',
-      width: '92%',
-      height: '92%',
-      border: `1px solid ${theme.palette.background.paper}`,
-      transform: 'translate(-50%, -50%)',
-      borderRadius: '50%',
-    },
     '&:hover': {
-      backgroundColor: theme.palette.primary.main,
+      backgroundColor: theme.palette.grey[200],
     },
     '& a': {
-      display: 'flex',
-      justifyContent: 'center',
-      width: '100%',
-      '& div': {
-        transform: 'translateX(5px)',
-        whiteSpace: 'pre-line',
-      },
+      padding: theme.spacing(0.6, 2.5),
     }
   },
 }));
@@ -156,9 +136,7 @@ const Landing = ({ to, playMusic }) => {
       <Button
         type="button"
         disableElevation
-        fullWidth
         classes={{root: classes.button}}
-        
       >
         <Link
           to="sectionOne"
@@ -166,8 +144,9 @@ const Landing = ({ to, playMusic }) => {
           smooth={true}
           offset={0}
           duration={500}
+          onClick={() => playMusicOn()}
         >
-          <div onClick={() => playMusicOn()}>{'OP\nEN'}</div>
+          {'OPEN INVITATION'}
         </Link>
       </Button>
     </Box>

@@ -11,11 +11,12 @@ const useStyles = makeStyles((theme) => ({
     letterSpacing: 2,
     lineHeight: 1.2,
     textAlign: 'center',
+    color: (isDark) => isDark ? theme.palette.background.paper : theme.palette.primary.dark,
   },
 }));
 
-const Title2 = ({ text }) => {
-  const classes = useStyles();
+const Title2 = ({ text, isDark = false }) => {
+  const classes = useStyles(isDark);
   return (
     <Typography variant="body1" classes={{root: classes.title}}>
       {text}

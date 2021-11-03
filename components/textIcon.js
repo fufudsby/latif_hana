@@ -5,8 +5,9 @@ import Link from 'next/link';
 
 const useStyles = makeStyles((theme) => ({
   text: {
+    position: 'relative',
     whiteSpace: 'pre-wrap',
-    color: theme.palette.grey[800],
+    color: (isDark) => theme.palette.grey[isDark ? 300 : 800],
     fontSize: 15,
     letterSpacing: 0.8,
     '&.link': {
@@ -18,8 +19,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const TextIcon = ({ text, link }) => {
-  const classes = useStyles();
+const TextIcon = ({ text, link, isDark = false }) => {
+  const classes = useStyles(isDark);
   return (
     <Box paddingBottom={1}>
       {link ? (

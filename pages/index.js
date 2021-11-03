@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
   boxContainer: {
     boxShadow: '0 0 48px 0 rgba(0,0,0,.2)',
+    background: `url('/images/pattern.png')`,
     '& .sectionTwo': {
       paddingBottom: theme.spacing(6),
     },
@@ -54,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Home({ data }) {
   const classes = useStyles();
   const router = useRouter();
-  const { to, shift } = router.query;
+  const { to } = router.query;
   const [ messages, setMessages ] = useState(data);
   const [ page, setPage ] = useState(2);
   const [ loadingMessage, setLoadingMessage ] = useState(false);
@@ -157,7 +158,7 @@ export default function Home({ data }) {
           <SectionTwo />
         </Box>
         <Box className="sectionThree">
-          <SectionThree shift={shift} />
+          <SectionThree />
           {/* <Box width={1} marginTop={3}>
             <img
               src="/images/maps.jpg"

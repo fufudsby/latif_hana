@@ -5,6 +5,11 @@ import Title from 'components/title';
 import Wishes from 'components/wishes';
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    '& .title': {
+      marginBottom: 0,
+    },
+  },
   typo1: {
     fontSize: 15,
     letterSpacing: 0.8,
@@ -35,12 +40,13 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   textField: {
+    backgroundColor: theme.palette.background.default,
     '& label, & input, & textarea': {
       fontSize: 15,
       letterSpacing: 0.8,
     },
     '& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline': {
-      borderColor: theme.palette.grey[600],
+      borderColor: theme.palette.grey[500],
     },
     '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline': {
       borderColor: theme.palette.primary.main,
@@ -59,7 +65,7 @@ const SectionRSVP = ({
  }) => {
   const classes = useStyles();
   return (
-    <Box paddingTop={8} paddingX={3}>
+    <Box paddingTop={8} paddingX={3} className={classes.root}>
       <Title text="Berikan Ucapan &amp; Doa" />
       {loading ? (
         <Box display="flex" justifyContent="center" paddingBottom={6} paddingTop={3}>

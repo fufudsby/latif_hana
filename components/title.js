@@ -29,7 +29,7 @@ const Title = ({ text }) => {
   console.log('render Title');
   const classes = useStyles();
   return (
-    <Typography variant="h4" classes={{root: classes.title}}>
+    <Typography variant="h4" classes={{root: classes.title}} className="title">
       {text}
       <span>
         <img src="/images/2195597.png" />

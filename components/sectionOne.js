@@ -7,7 +7,7 @@ import { Carousel } from 'react-responsive-carousel';
 
 const useStyles = makeStyles((theme) => ({
   bgGradient: {
-    background: 'linear-gradient(180deg, rgba(228,185,169,0.7511204310825893) 0%, rgba(252,241,239,1) 40%)',
+    background: 'linear-gradient(180deg, rgba(228,185,169,0.7511204310825893) 0%, rgba(252,241,239,0) 40%)',
   },
   boxContent: {
     padding: theme.spacing(4, 0),
