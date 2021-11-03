@@ -40,30 +40,30 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   bgImg: {
-    background: `url('/images/img/img10.jpg') no-repeat center bottom`,
+    background: `url('/images/bg_section3.png') no-repeat center bottom`,
     backgroundSize: 'auto 100%',
     position: 'relative',
-    '&:before': {
-      content: `''`,
-      position: 'absolute',
-      left: 0,
-      bottom: 0,
-      width: '100%',
-      height: '30px',
-      background: `url('/images/bgSeparate.png') no-repeat center top`,
-      backgroundSize: '100% 100%',
-      transform: 'scaleY(-1)',
-    },
-    '&:after': {
-      content: `''`,
-      position: 'absolute',
-      left: 0,
-      top: 0,
-      width: '100%',
-      height: '30px',
-      background: `url('/images/bgSeparate.png') no-repeat center top`,
-      backgroundSize: '100% 100%',
-    },
+    // '&:before': {
+    //   content: `''`,
+    //   position: 'absolute',
+    //   left: 0,
+    //   bottom: 0,
+    //   width: '100%',
+    //   height: '30px',
+    //   background: `url('/images/bgSeparate.png') no-repeat center top`,
+    //   backgroundSize: '100% 100%',
+    //   transform: 'scaleY(-1)',
+    // },
+    // '&:after': {
+    //   content: `''`,
+    //   position: 'absolute',
+    //   left: 0,
+    //   top: 0,
+    //   width: '100%',
+    //   height: '30px',
+    //   background: `url('/images/bgSeparate.png') no-repeat center top`,
+    //   backgroundSize: '100% 100%',
+    // },
   },
 }));
 
@@ -72,7 +72,7 @@ const SectionThree = () => {
   const classes = useStyles();
   return (
     <>
-      <Box paddingX={3} paddingY={8} className={classes.bgImg}>
+      <Box paddingX={3} paddingY={12} className={classes.bgImg}>
         <Title2 text="Resepsi &amp; Akad" isDark={true} />
         <Box className={classes.gridItem} marginTop={4} marginBottom={2}>
           <Typography
@@ -104,11 +104,11 @@ const SectionThree = () => {
             Resepsi
           </Typography>
           <TextIcon
-            text="Minggu, 08 Agustus 2021"
+            text="Minggu, 14 November 2021<br />Pukul 12.00 - 13.00"
             isDark={true}
           />
           <TextIcon
-            text="Gedung Asrama Haji Kota Madiun, Jawa Timur"
+            text="Gedung Asrama Haji Kota Madiun, Jl. Ring Road Barat, Manguharjo, Kota Madiun"
             link="https://www.google.com/maps/place/Wisma+H.+Kota+Madiun,+Jl.+Ring+Road+Barat,+Ngegong,+Kec.+Manguharjo,+Kota+Madiun,+Jawa+Timur+63125/@-7.6070356,111.5148691,17z/data=!4m2!3m1!1s0x2e79bfae51c34d55:0x56ae96045e3f2685"
             isDark={true}
           />

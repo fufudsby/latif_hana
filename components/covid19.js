@@ -34,7 +34,7 @@ const Covid19 = () => {
   console.log('render SectionThree');
   const classes = useStyles();
   return (
-    <Box paddingY={3} paddingX={3}>
+    <Box paddingTop={5} paddingBottom={3} paddingX={3}>
       <Title2 text="Protokol Pernikahan Masa Adaptasi Kebiasaan Baru" />
       <Box marginTop={4}>
         <Grid container spacing={3}>

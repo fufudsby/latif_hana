@@ -45,10 +45,15 @@ const useStyles = makeStyles((theme) => ({
       fontSize: 15,
       letterSpacing: 0.8,
     },
-    '& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline': {
-      borderColor: theme.palette.grey[500],
+    '& .MuiOutlinedInput-root': {
+      '& .MuiOutlinedInput-notchedOutline': {
+        borderColor: theme.palette.grey[300],
+      },
+      '&:hover .MuiOutlinedInput-notchedOutline': {
+        borderColor: theme.palette.grey[400],
+      },
     },
-    '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline': {
+    '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline, & .MuiOutlinedInput-root.Mui-focused:hover .MuiOutlinedInput-notchedOutline': {
       borderColor: theme.palette.primary.main,
     },
   },

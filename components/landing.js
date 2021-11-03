@@ -5,7 +5,7 @@ import { Link } from 'react-scroll';
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    background: `${theme.palette.background.default} url('/images/img/img7.jpg') no-repeat center bottom`,
+    background: `${theme.palette.background.default} url('/images/img_landing.jpg') no-repeat center bottom`,
     backgroundSize: 'auto 120%',
   },
   name: {

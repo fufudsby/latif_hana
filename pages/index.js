@@ -101,11 +101,13 @@ export default function Home({ data }) {
     const result = await v.json();
     console.log('result', result);
     if (result.createMessage) {
+      const newArray = [values].concat(messages);
+      setMessages(newArray);
       setValues({});
       setSuccess(true);
     }
     setLoadingRSVP(false);
-  }, [values]);
+  }, [values, messages]);
   const AudioPlayer = () => {
     if (!ready && !loading) return null;
     if (loading) {
