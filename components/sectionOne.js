@@ -89,10 +89,10 @@ const SectionOne = () => {
       <Box className={classes.boxContent}>
         <Box position="relative" className={classes.boxTitle}>
           <Typography variant="h6">
-            The Story
+            Sebuah Cerita
           </Typography>
           <Typography variant="h5">
-            Everything You Wanted To Know About
+            Sesuatu yang mungkin kau belum tahu
           </Typography>
         </Box>
         <Box className={classes.carousel}>
@@ -105,7 +105,7 @@ const SectionOne = () => {
             showStatus={false}
           >
             <div className={classes.carouselItem}>
-              <Typography variant="body2"><strong>To: Hana</strong></Typography>
+              <Typography variant="body2"><strong>Untuk: Hana</strong></Typography>
               <Typography variant="body2">Kaulah istriku, yang percaya pada hal-hal sepele dan paling remeh dari mimpi-mimpiku. Yang tidak peduli pada hal-hal yang disanjung orang lain dariku, tapi begitu memperhatikan hal-hal yang tak dilihat orang lain dari diriku. “Orang lain mana tahu kalau kamu suka joget-joget waktu mandi,” katamu suatu hari, “Mereka juga nggak tahu kalau ambil baju selalu bikin berantakan dan nggak nutup lemari,”</Typography>
               <Typography variant="body2">Kemudian kamu menutup lemari baju, sembari mengomel “Hmmm..  Kebiasaan.. Latif Hendra Sukmana, angel nemen dikandani,”. Aku masih masih mengeringkan rambut saat itu, saat kamu bertanya, “Hari ini mau dibuatin sarapan apa?”. Kepalaku menyembul dari dalam kamar, melihatmu yang sedang sibuk merapikan tumpukan baju. “Terserah,” jawabku.</Typography>
             </div>
@@ -114,7 +114,7 @@ const SectionOne = () => {
               <Typography variant="body2">Kaulah istriku, yang selalu menatapku dengan cara yang berbeda dari cara orang lain memandangku. Yang memperlakukanku tidak seperti orang lain memperlakukannya. Yang berbicara padaku dengan bahasa yang tidak diucapkan siapapun lagi di dunia ini. Yang percaya pada semua mimpi-mimpiku, sebodoh apapun itu.</Typography>
             </div>
             <div className={classes.carouselItem}>
-              <Typography variant="body2"><strong>To: Mas Latif</strong></Typography>
+              <Typography variant="body2"><strong>Untuk: Mas Latif</strong></Typography>
               <Typography variant="body2">“Beruntung banget ya kamu, Han. Hubungannya seru banget. Ada saja yang bikin hidup suasana,” kata seorang temanku. Kadang aku juga merasa sebel kalau ada yang bilang begitu. Mereka tidak tahu saja bahwa kamu itu seringkali sangat menyebalkan. Mereka juga tidak tahu saja bahwa terkadang hubungan kita pun seringkali penuh drama. Begitulah risiko seorang anak tunggal yang menikahi anak laki-laki pertama sekaligus cucu pertama di keluarganya.</Typography>
               <Typography variant="body2">Mereka yang mengira kamu sering menggombaliku setiap hari, tidak pernah tahu bahwa caramu bicara kepadaku lebih sering tanpa tata bahasa yang sempurna. Misalnya, “Yang, jam tangan,” itu artinya kamu bertanya di mana kacamatamu. Atau “Yang, aku budrek,” itu artinya kamu mau minta waktu me time dengan bermain PS4 tanpa diganggu.</Typography>
             </div>

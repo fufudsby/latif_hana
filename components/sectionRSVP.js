@@ -141,7 +141,9 @@ const SectionRSVP = ({
           )}
         </>
       )}
-      <Wishes messages={messages} loadingMessage={loadingMessage} />
+      {messages.length > 0 &&
+        <Wishes messages={messages} loadingMessage={loadingMessage} />
+      }
     </Box>
   );
 };

@@ -37,7 +37,7 @@ const SectionTwo = () => {
   const classes = useStyles();
   return (
     <Box minHeight="100vh">
-      <Title text="Once upon a time" />
+      <Title text="Kami yang berbahagia" />
       <Box display="flex" flexDirection="column" alignItems="center" paddingY={3}>
         <Avatar src="/images/img2.jpg" classes={{root: classes.avatar}} />
         <Box marginTop={3} paddingX={1.5} maxWidth="420px" textAlign="center">
