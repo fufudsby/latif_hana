@@ -92,7 +92,7 @@ const SectionOne = () => {
             Sebuah Cerita
           </Typography>
           <Typography variant="h5">
-            Sesuatu yang mungkin kau belum tahu
+            Sesuatu yang Mungkin Kau Belum Tahu
           </Typography>
         </Box>
         <Box className={classes.carousel}>
